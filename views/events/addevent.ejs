@@ -1,0 +1,83 @@
+<% layout("/layouts/boilerplate")-%>
+
+    <style>
+        .form-container {
+            margin-top: 6rem;
+        }
+
+        .add-btn {
+            background-color: #000957;
+            color: #f8f9fa;
+            border-radius: 50px;
+            border: 2px solid #000957;
+            padding: 0.5rem 1rem;
+        }
+    </style>
+    <div class="row form-container">
+        <div class="col-8 offset-2 mt-3">
+            <h2>Create new Listing</h2>
+            <form action="" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Event Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">Name is required</div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description:</label>
+                    <textarea id="description" name="description" class="form-control" required></textarea>
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">Description is required</div>
+                </div>
+
+                <!-- <div class="mb-3">
+                    <label for="image" class="form-label">Upload Image</label>
+                    <input type="file" name="listing[image]" class="form-control">
+                </div> -->
+
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="date" class="form-label">Date:</label>
+                        <input type="date" id="date" name="date" class="form-control" required>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Price is required</div>
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="time" class="form-label">Time:</label>
+                        <input type="time" id="time" name="time" class="form-control" required>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Price is required</div>
+                    </div>
+
+                </div>
+
+                <div>
+                    <label for="category" class="form-label">Category:</label>
+                    <input type="text" id="category" name="category" class="form-control" required>
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">Price is required</div>
+
+                    <label for="organizer" class="form-label">Organizer:</label>
+                    <input type="text" id="organizer" name="organizer" class="form-control" required>
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">Price is required</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label"></label>
+                    <input type="text" name="location" placeholder="Enter Location" class="form-control" required>
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">Location is required</div>
+                </div>
+
+                <div>
+                    <label for="capacity" class="form-label">Capacity:</label>
+                    <input type="number" id="capacity" name="capacity" class="form-control" required>
+                </div>
+
+
+                <button type="submit" class="add-btn mb-3 mt-3">Add</button>
+            </form>
+        </div>
+    </div>

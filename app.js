@@ -25,6 +25,11 @@ app.get("/", async (req, res) => {
     res.render("events/events.ejs", { allEvents });
 })
 
+app.get('/addevent', (req, res) => {
+    res.render('events/addevent.ejs');
+});
+
+
 app.get("/details/:id", async (req, res) => {
     const { id } = req.params;
     const event = await Events.findById(id);

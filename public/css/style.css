@@ -306,3 +306,11 @@ body {
         font-size: 0.7rem;
     }
 }
+
+/* Add Event Page */
+
+.addeventbody {
+    margin: 0;
+    padding: 0;
+    padding-top: 6rem;
+}
