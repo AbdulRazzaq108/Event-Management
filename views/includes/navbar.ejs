@@ -1,0 +1,68 @@
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<style>
+    .btn {
+        background-color: #f8f9fa !important;
+        color: #000 !important;
+        border-radius: 50px;
+        border: 2px solid #000;
+    }
+
+    .btn:hover {
+        background-color: #000957 !important;
+        color: #f8f9fa !important;
+    }
+
+    .search-box {
+        background-color: #f8f9fa !important;
+        color: #000 !important;
+        border-radius: 50px;
+        border: 2px solid #000;
+    }
+
+    .navbar {
+        border-radius: 0 0 1rem 1rem;
+        background-color: #23486A !important;
+
+    }
+
+    .navbar-brand {
+        color: #f8f9fa !important;
+    }
+
+    .nav-item a {
+        color: #f8f9fa !important;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg fixed-top" style="height: 5rem;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">MJCET</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hackathons</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2 search-box" type="search" placeholder="Search Opportunities "
+                    aria-label="Search">
+                <button class="btn search-btn btn-outline-success" type="submit">Search<i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+
+            <form action="/users/login" method="GET">
+                <button class="btn" type="submit">Admin</button>
+            </form>
+        </div>
+    </div>
+</nav>

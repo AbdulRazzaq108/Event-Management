@@ -1,0 +1,64 @@
+<% layout("/layouts/boilerplate")-%>
+
+
+
+    <body>
+        <div class="event-card">
+            <div class="event-header">Event Details</div>
+            <div class="roboto-mono-webfont">
+                <div class="event-card-body">
+                    <h5 class="event-card-title mb-3">
+                        <b>
+                            <%= event.name %>
+                        </b>
+                    </h5>
+                    <div class="description">
+                        <h4 class="card-subtitle mb-2 text-secondary">
+                            <%= event.description %>
+                        </h4>
+                    </div>
+                    <div style="align-items: center;">
+                        <div class="date">
+                            <% let eventDate=new Date(event.date); %>
+                                <% let day=eventDate.getDate(); %>
+                                    <% let month=eventDate.toLocaleString('default', { month: 'long' }).toUpperCase();
+                                        %>
+                                        <div class="month">
+                                            <%= month %>
+                                        </div>
+                                        <div class="day">
+                                            <%= day %>
+                                        </div>
+                        </div>
+                    </div>
+                    <ul>
+                        <div>
+                            <li>
+                                <p class="event-card-text">
+                                    <b>Location: <%= event.location %></b>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="event-card-text">
+                                    <b>Timings: <%= event.time %></b>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="event-card-text">
+                                    <b>Capacity: <%= event.capacity %></b>
+                                </p>
+                            </li>
+                            <h5 class="">
+                                <b>Organized By: <%= event.organizer %></b>
+                            </h5>
+                        </div>
+                    </ul>
+                    <div class="event-links">
+                        <form action="">
+                            <button class="event-card-link">Register Now!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>

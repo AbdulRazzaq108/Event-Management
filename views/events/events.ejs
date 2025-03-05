@@ -1,0 +1,53 @@
+<% layout("/layouts/boilerplate")-%>
+
+
+    <body>
+        <div class="card-container">
+            <div class="card-header">Upcoming Events</div>
+            <% for(event of allEvents) { %>
+                <div class="card roboto-mono-webfont">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <b>
+                                <%= event.name %>
+                            </b>
+                        </h5>
+                        <div class="description">
+                            <h6 class="card-subtitle mb-2 text-secondary">
+                                <%= event.description %>
+                            </h6>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <div class="date">
+                                <% let eventDate=new Date(event.date); %>
+                                    <% let day=eventDate.getDate(); %>
+                                        <% let month=eventDate.toLocaleString('default', { month: 'long'
+                                            }).toUpperCase(); %>
+                                            <div class="month">
+                                                <%= month %>
+                                            </div>
+                                            <div class="day">
+                                                <%= day %>
+                                            </div>
+                            </div>
+
+
+                            <div class="details">
+                                <p class="card-text">
+                                    <b>Organized By: <%= event.organizer %></b>
+                                </p>
+                                <p class="card-text">
+                                    Timings: <%= event.time %>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="links">
+                            <a href="/" class="card-link">Register</a>
+                            <form action="/details/<%= event._id %>" method="get"> <button class="card-link"
+                                    type="submit">Details</button> </form>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </body>
