@@ -1,6 +1,18 @@
 <% layout("/layouts/boilerplate")-%>
 
-
+    <style>
+        .delete-btn {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            width: 60%;
+            margin: auto;
+            background-color: red !important;
+            color: white !important;
+            border-radius: 10px;
+        }
+    </style>
 
     <body>
         <div class="event-card">
@@ -61,4 +73,9 @@
                 </div>
             </div>
         </div>
+        <form action="/details/<%= event._id %>?_method=DELETE" method="POST">
+            <div class="mb-3">
+                <button class="btn delete-btn">Delete this Event!</button>
+            </div>
+        </form>
     </body>

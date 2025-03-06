@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const path = require("path");
+const multer = require('multer');
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"));
 app.engine('ejs', ejsMate);
@@ -10,6 +11,8 @@ app.use(express.static(path.join(__dirname, "public")));
 const Events = require('./models/events');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+const upload = multer({ dest: 'uploads/' });
 
 
 mongoose.connect('mongodb://127.0.0.1:27017/Project1')
@@ -25,9 +28,15 @@ app.get("/", async (req, res) => {
     res.render("events/events.ejs", { allEvents });
 })
 
-app.get('/addevent', (req, res) => {
+app.get('/events/add', (req, res) => {
     res.render('events/addevent.ejs');
 });
+
+app.post('/events/add', upload.none(), async (req, res) => {
+    const event = new Events(req.body);
+    await event.save();
+    res.redirect('/');
+})
 
 
 app.get("/details/:id", async (req, res) => {
