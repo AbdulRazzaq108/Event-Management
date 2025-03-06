@@ -45,6 +45,12 @@ app.get("/details/:id", async (req, res) => {
     res.render("events/details.ejs", { event });
 })
 
+app.post("/details/:id", async (req, res) => {
+    const { id } = req.params;
+    await Events.findByIdAndDelete(id);
+    res.redirect('/');
+})
+
 app.get("/users/login", (req, res) => {
     res.render("users/login.ejs");
 })
